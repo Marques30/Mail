@@ -25,13 +25,10 @@ passwordElem.submit()
 loginElem = browser.find_element_by_id('login-signin')
 loginElem.click()
 
-skipElem = browser.find_element_by_id('skipbtn')
-skipElem.click()
-
 composeElem = browser.find_element_by_id('Compose')
 composeElem.click()
 
-reElem = browser.find_element_by_id('to-field')
+reElem = browser.find_element_by_class_name('recipient-input')
 reElem.send_keys(userSender)
 
 subElem = browser.find_element_by_id('subject-field')
