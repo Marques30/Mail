@@ -12,8 +12,8 @@ userSubject = input()
 browser = webdriver.Firefox()
 browser.get('http://yahoo.com')
 
-loginElem = browser.find_element_by_link_text('Mail')
-loginElem.click()
+btnElem = browser.find_element_by_link_text('Mail')
+btnElem.click()
 
 emailElem = browser.find_element_by_id('login-username')
 emailElem.send_keys(userEmail)
@@ -25,17 +25,17 @@ passwordElem.submit()
 loginElem = browser.find_element_by_id('login-signin')
 loginElem.click()
 
-loginElem = browser.find_element_by_id('skipbtn')
-loginElem.click()
+skipElem = browser.find_element_by_id('skipbtn')
+skipElem.click()
 
-loginElem = browser.find_element_by_partial_link_text('Compose')
-loginElem.click()
+composeElem = browser.find_element_by_id('Compose')
+composeElem.click()
 
-emailElem = browser.find_element_by_id('to-field')
-emailElem.send_keys(userSender)
+reElem = browser.find_element_by_id('to-field')
+reElem.send_keys(userSender)
 
-emailElem = browser.find_element_by_id('subject-field')
-emailElem.send_keys(userSubject)
+subElem = browser.find_element_by_id('subject-field')
+subElem.send_keys(userSubject)
 
-loginElem = browser.find_element_by_link_text('Send')
-loginElem.click()
+sendElem = browser.find_element_by_link_text('Send')
+sendElem.click()
