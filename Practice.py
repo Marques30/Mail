@@ -8,6 +8,8 @@ print('Input who you are sending to')
 userSender = input()
 print('Input the subject of email')
 userSubject = input()
+print('Input the text of email')
+userBody = input()
 
 browser = webdriver.Firefox()
 browser.get('http://yahoo.com')
@@ -28,11 +30,14 @@ loginElem.click()
 composeElem = browser.find_element_by_id('Compose')
 composeElem.click()
 
-reElem = browser.find_element_by_class_name('recipient-input')
+reElem = browser.find_element_by_id('to-field')
 reElem.send_keys(userSender)
 
 subElem = browser.find_element_by_id('subject-field')
 subElem.send_keys(userSubject)
+
+bodyElem = browser.find_element_by_id('rtetext')
+bodyElem.send_keys(userBody)
 
 sendElem = browser.find_element_by_link_text('Send')
 sendElem.click()
